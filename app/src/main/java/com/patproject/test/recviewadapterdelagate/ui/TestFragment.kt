@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.patproject.test.recviewadapterdelagate.appComponent
 import com.patproject.test.recviewadapterdelagate.databinding.FragmentTestBinding
+import com.patproject.test.utils.Status
+import kotlinx.coroutines.flow.buffer
 import javax.inject.Inject
 
 
@@ -36,12 +40,50 @@ class TestFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//
-//        Log.i("getPosts",testFragmentViewModel.getPosts().toString())
-//        Log.i("getPhotos",testFragmentViewModel.getPhotos().toString())
-//        Log.i("getRefPhotos",testFragmentViewModel.getRefPhotos().toString())
-//
-//        super.onViewCreated(view, savedInstanceState)
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        lifecycleScope.launchWhenStarted {
+            testFragmentViewModel.getPosts()
+                .buffer()
+                .collect{resource->
+                when(resource.status){
+                    Status.ERROR ->{
+                        Toast.makeText(context,"request exception",Toast.LENGTH_LONG).show()
+                    }
+                    Status.SUCCESS ->{}
+                    Status.LOADING ->{}
+                    else -> throw Exception("wrong resource work")
+                }
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            testFragmentViewModel.getRefPhotos()
+                .buffer()
+                .collect{resource->
+                    when(resource.status){
+                        Status.ERROR ->{
+                            Toast.makeText(context,"request exception",Toast.LENGTH_LONG).show()
+                        }
+                        Status.SUCCESS ->{}
+                        Status.LOADING ->{}
+                        else -> throw Exception("wrong resource work")
+                    }
+                }
+        }
+        lifecycleScope.launchWhenStarted {
+            testFragmentViewModel.getPhotos()
+                .buffer()
+                .collect{resource->
+                    when(resource.status){
+                        Status.ERROR ->{
+                            Toast.makeText(context,"request exception",Toast.LENGTH_LONG).show()
+                        }
+                        Status.SUCCESS ->{}
+                        Status.LOADING ->{}
+                        else -> throw Exception("wrong resource work")
+                    }
+                }
+        }
+
+    }
+
 }

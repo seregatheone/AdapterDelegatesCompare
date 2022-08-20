@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".MainActivity">
 
         <TextView
@@ -15,57 +15,69 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:textSize="30sp"
             android:text="@string/pictures"
+            android:textSize="30sp"
 
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/firstRecView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/firstRecView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/textTextView"
+
             app:layout_constraintTop_toBottomOf="@+id/picturesTextView"
 
-            tools:listitem="@layout/picture_item_layout"
-            tools:itemCount="1"/>
+            tools:listitem="@layout/picture_item_layout" />
+
         <TextView
             android:id="@+id/textTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:textSize="30sp"
             android:text="@string/list"
+            android:textSize="30sp"
 
-            app:layout_constraintTop_toBottomOf="@+id/firstRecView"
+            app:layout_constraintBottom_toTopOf="@+id/secondRecView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/firstRecView" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/secondRecView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/textTextView"
-            tools:listitem="@layout/text_item_layout"
-            tools:itemCount="1"/>
+            app:layout_constraintBottom_toTopOf="@+id/referenceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/textTextView"
+            tools:listitem="@layout/text_item_layout" />
+
         <TextView
             android:id="@+id/referenceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:textSize="30sp"
             android:text="@string/reference"
+            android:textSize="30sp"
 
-            app:layout_constraintTop_toBottomOf="@+id/secondRecView"
+            app:layout_constraintBottom_toTopOf="@+id/thirdRecView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/secondRecView" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/thirdRecView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/referenceTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/referenceTextView"
 
-            tools:listitem="@layout/reference_item_layout"
-            tools:itemCount="1">
+            tools:listitem="@layout/reference_item_layout">
 
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
