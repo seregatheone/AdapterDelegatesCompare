@@ -18,7 +18,6 @@ import javax.inject.Inject
 class TestFragmentViewModel(private val dataRepository: DataRepository) : ViewModel() {
 
     fun getPosts() = flow{
-        emit(Resource.loading(data = null))
         try {
             emit(Resource.success(data = dataRepository.getPosts()))
         } catch (exception: Exception) {
@@ -27,10 +26,9 @@ class TestFragmentViewModel(private val dataRepository: DataRepository) : ViewMo
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        emptyList<PostClass>()
+        Resource.loading(data = null)
     )
     fun getPhotos() = flow{
-        emit(Resource.loading(data = null))
         try {
             emit(Resource.success(data = dataRepository.getPhotos()))
         } catch (exception: Exception) {
@@ -39,10 +37,9 @@ class TestFragmentViewModel(private val dataRepository: DataRepository) : ViewMo
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        emptyList<PhotoClass>()
+        Resource.loading(data = null)
     )
     fun getRefPhotos() = flow{
-        emit(Resource.loading(data = null))
         try {
             emit(Resource.success(data = dataRepository.getPhotosRefs()))
         } catch (exception: Exception) {
@@ -51,7 +48,7 @@ class TestFragmentViewModel(private val dataRepository: DataRepository) : ViewMo
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        emptyList<PhotoRefClass>()
+        Resource.loading(data = null)
     )
 
     companion object{
