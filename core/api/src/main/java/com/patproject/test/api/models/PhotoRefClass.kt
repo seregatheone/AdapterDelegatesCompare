@@ -10,4 +10,4 @@ data class PhotoRefClass(
     val thumbnailUrl: String,
     @SerializedName("url")
     val url: String
-)
+):DisplayableItem

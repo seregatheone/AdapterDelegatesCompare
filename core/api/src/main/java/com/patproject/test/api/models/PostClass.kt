@@ -12,4 +12,4 @@ data class PostClass(
     val title: String,
     @SerializedName("userId")
     val userId: Int
-)
+):DisplayableItem

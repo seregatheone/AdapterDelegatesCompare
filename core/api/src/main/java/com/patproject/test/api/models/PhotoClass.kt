@@ -14,4 +14,4 @@ data class PhotoClass(
     val title: String,
     @SerializedName("url")
     val url: String
-)
+):DisplayableItem

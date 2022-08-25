@@ -51,6 +51,7 @@ class TestFragmentViewModel(private val dataRepository: DataRepository) : ViewMo
         Resource.loading(data = null)
     )
 
+
     companion object{
         @Suppress("UNCHECKED_CAST")
         class TestFragmentViewModelFactory @Inject constructor(

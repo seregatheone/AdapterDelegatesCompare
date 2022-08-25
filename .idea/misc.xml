@@ -4,10 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/fragment_test.xml" value="0.16" />
-        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/picture_item_layout.xml" value="0.2" />
-        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/reference_item_layout.xml" value="0.33" />
-        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/text_item_layout.xml" value="0.1" />
+        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/fragment_test.xml" value="0.1" />
+        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/picture_item_layout.xml" value="0.18" />
+        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/reference_item_layout.xml" value="0.18" />
+        <entry key="..\:/Android_ALL/RecViewAdapterDelagate/app/src/main/res/layout/text_item_layout.xml" value="0.22" />
       </map>
     </option>
   </component>
