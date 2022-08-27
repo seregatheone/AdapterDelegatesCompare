@@ -2,6 +2,7 @@ package com.patproject.test.api.models
 
 
 import com.google.gson.annotations.SerializedName
+import ru.tinkoff.mobile.tech.ti_recycler.base.ViewTyped
 
 data class PhotoRefClass(
     @SerializedName("id")
@@ -10,4 +11,4 @@ data class PhotoRefClass(
     val thumbnailUrl: String,
     @SerializedName("url")
     val url: String
-)
+): ViewTyped

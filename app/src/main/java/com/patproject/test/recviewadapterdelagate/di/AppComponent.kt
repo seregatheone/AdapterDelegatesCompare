@@ -1,6 +1,7 @@
 package com.patproject.test.recviewadapterdelagate.di
 
 import android.app.Application
+import android.content.Context
 import com.patproject.test.api.DataService
 import com.patproject.test.api.RetrofitBuilder
 import com.patproject.test.recviewadapterdelagate.ui.TestFragment
